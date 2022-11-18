@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <title>Admin Panel</title>
+</head>
+<body>
+    <input type="checkbox" name="toggle-sidebar" id="sidebar-toggle" >
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-head">
+            <span>Admin Panel</span>
+        </div>
+
+        <div class="sidebar-main">
+            <!-- Dashboard -->
+            <div class="sidebar-menu">
+                <div class="menu-head">
+                    <span>Dashboard</span>
+                </div>
+                <ul>
+                    <li>
+                        <a href="#analystic">
+                            <span class="las la-chart-bar"></span>
+                            Analisis
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#payment">
+                            <span class="las la-star"></span>
+                            Pendapatan
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#category">
+                            <span class="las la-folder"></span>
+                            Kategori
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#class">
+                            <span class="las la-school"></span>
+                            Kelas
+                        </a>
+                    </li>
+                </ul>
+                <div class="menu-head">
+                    <span>Aplikasi</span>
+                </div>
+                <ul>
+                    <li>
+                        <a href="">
+                            <span class="las la-home"></span>
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <span class="las la-phone"></span>
+                            Contact
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <span class="las la-users"></span>
+                            Pengguna
+                        </a>
+                    </li>
+                </ul>
+                <div class="sidebar-btn">
+                    <button class="btn-main">
+                        <span class="las la-arrow-circle-left"></span>
+                        Back
+                    </button>
+                    <button class="btn-main">
+                        <span class="las la-door-open"></span>
+                        Sign out
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Main Content -->
+    <div class="main-content">
+        <header>
+            <div class="side-toggle">
+                <label for="sidebar-toggle">
+                    <span class="las la-bars"></span>
+                </label>
+            </div>
+
+            <a href=""><img src="resources/logo-cropped.png" width="70px" /></a>
+        </header>
+
+        <main>
+            <!-- Analisis Statistik -->
+            <div id="analystic" class="category-title">
+                <h1>Analisis Statistik</h1>
+                <small>Memonitor kegiatan website. Check jumlah pengguna, kelas, guru.</small>
+            </div>
+            <div class="category">
+                <div class="card">
+                    <div class="card-info">
+                        <div class="card-head">
+                            <span>Jumlah pengguna</span>
+                            <small>Banyaknya pengguna website/small>
+                        </div>
+
+                        <h2>2000 Orang</h2>
+                    </div>
+                    <span class="las la-users"></span>
+                </div>
+
+                <div class="card">
+                    <div class="card-info">
+                        <div class="card-head">
+                            <span>Jumlah Kelas</span>
+                            <small>Banyaknya kelas yang telah tersedia</small> <!-- 5 itu dynamic -->
+                        </div>
+
+                        <h2>200 Kelas</h2>
+                    </div>
+                    <span class="las la-school"></span>
+                </div>
+
+                <div class="card">
+                    <div class="card-info">
+                        <div class="card-head">
+                            <span>Jumlah Guru</span>
+                            <small>Banyaknya tenaga pengajar</small>
+                        </div>
+
+                        <h2>500 Orang</h2>
+                    </div>
+                    <span class="las la-user-tie"></span>
+                </div>
+            </div>
+
+            <!-- Pendapatan -->
+            <div id="payment" class="category-title">
+                <h1>Pendapatan</h1>
+                <small>Cek Pendapatan dari subskripsi, kelas, dan guru. Jangan lupa untuk to do needed actions</small>
+            </div>
+            <div class="info-grid">
+                <div class="payment-left">
+                    <div class="card">
+                        <div class="card-info">
+                            <div class="card-head">
+                                <span>Total Pendapatan</span>
+                                <small>Pendapatan yang didapatkan di bulan ini</small>
+                            </div>
+
+                            <h2>Rp10.000.000</h2>
+                        </div>
+                        <span class="las la-wallet"></span>
+                        <small>5% peningkatan dari bulan terakhir</small>
+                    </div>
+
+                    <div class="card" style="margin-top: 1.1rem;">
+                        <div class="card-info">
+                            <div class="card-head">
+                                <span>Biaya Kelas Perbulan</span>
+                                <small>Biaya yang telah ditetapkan untuk mengakses kelas</small>
+                            </div>
+
+                            <h2>Rp500.000</h2>
+                        </div>
+                        <span class="las la-money-bill"></span>
+                        <div>
+                            <small>Ingin menetapkan harga yang baru? Klik tombol</small>
+                            <button class="btn-main">
+                                <span class="las la-edit"></span>
+                                Tetapkan Harga Baru
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="chart-container" style="height: 23.6rem;">
+                    <canvas id="incomeChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Pembayaran Kelas -->
+            <div class="info-grid">
+                <div class="needed-card">
+                    <h3>Actions Needed (Pembayaran Kelas)</h3>
+                    <small>Terdapat beberapa pembayaran yang harus diverifikasi!</small>
+
+                    <table width="100%">
+                        <tbody>
+                            <tr>
+                                <td><div>KodeTransaksi01</div></td>
+                                <td><div>Budi</div></td>
+                                <td><div>11 November 2022</div></td>
+                                <td>
+                                    <div>
+                                        <button class="btn-second">
+                                            <span class="las la-check-circle"></span>
+                                            Verifikasi
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><div>KodeTransaksi02</div></td>
+                                <td><div>Mahdi</div></td>
+                                <td><div>13 November 2022</div></td>
+                                <td></div><div>
+                                    <button class="btn-second">
+                                        <span class="las la-check-circle"></span>
+                                        Verifikasi
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="list">
+                    <h3>Riwayat pembelian kelas <small>Lihat semua riwayat <span class="las la-arrow-right"></span></small></h3>
+                    <table width="100%">
+                        <tbody>
+                            <tr>
+                                <td><div><span class="las la-receipt"></span></div></td>
+                                <td><div>KodeTransaksi01</div></td>
+                                <td><div>Budi</div></td>
+                                <td><div>213801293</div></td>
+                                <td><div>11 November 2022</div></td>
+                            </tr>
+                            <tr>
+                                <td><div><span class="las la-receipt"></span></div></td>
+                                <td><div>KodeTransaksi02</div></td>
+                                <td><div>Mahdi</div></td>
+                                <td><div>12039834</div></td>
+                                <td><div>13 November 2022</div></td>
+                            </tr>
+                            <tr>
+                                <td><div><span class="las la-receipt"></span></div></td>
+                                <td><div>KodeTransaksi03</div></td>
+                                <td><div>Kavin</div></td>
+                                <td><div>65124345</div></td>
+                                <td><div>14 November 2022</div></td>
+                            </tr>
+                            <tr>
+                                <td><div><span class="las la-receipt"></span></div></td>
+                                <td><div>KodeTransaksi04</div></td>
+                                <td><div>Handi</div></td>
+                                <td><div>12446633</div></td>
+                                <td><div>14 November 2022</div></td>
+                            </tr>
+                            <tr>
+                                <td><div><span class="las la-receipt"></span></div></td>
+                                <td><div>KodeTransaksi05</div></td>
+                                <td><div>Joko</div></td>
+                                <td><div>144677234</div></td>
+                                <td><div>16 November 2022</div></td>
+                            </tr>
+                            <tr>
+                                <td><div><span class="las la-receipt"></span></div></td>
+                                <td><div>KodeTransaksi06</div></td>
+                                <td><div>Mahdi</div></td>
+                                <td><div>124345456</div></td>
+                                <td><div>16 November 2022</div></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- Pembayaran Guru -->
+            <div class="info-grid">
+                <div class="needed-card">
+                    <h3>Actions Needed (Pembayaran Guru)</h3>
+                    <small>Terdapat beberapa pembayaran yang harus diverifikasi!</small>
+
+                    <table width="100%">
+                        <tbody>
+                            <tr>
+                                <td><div>KodeTransaksi01</div></td>
+                                <td><div>Budi</div></td>
+                                <td><div>Guru Joko</div></td>
+                                <td><div>11 November 2022</div></td>
+                                <td>
+                                    <div>
+                                        <button class="btn-second">
+                                            <span class="las la-check-circle"></span>
+                                            Verifikasi
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><div>KodeTransaksi02</div></td>
+                                <td><div>Mahdi</div></td>
+                                <td><div>Guru Sumadi</div></td>
+                                <td><div>13 November 2022</div></td>
+                                <td></div><div>
+                                    <button class="btn-second">
+                                        <span class="las la-check-circle"></span>
+                                        Verifikasi
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="list">
+                    <h3>Riwayat pembelian guru <small>Lihat semua riwayat <span class="las la-arrow-right"></span></small></h3>
+                    <table width="100%">
+                        <tbody>
+                            <tr>
+                                <td><div><span class="las la-receipt"></span></div></td>
+                                <td><div>KodeTransaksi01</div></td>
+                                <td><div>Budi</div></td>
+                                <td><div>Budidoremi@gmail.com</div></td>
+                                <td><div>Guru Joko</div></td>
+                                <td><div>11 November 2022</div></td>
+                            </tr>
+                            <tr>
+                                <td><div><span class="las la-receipt"></span></div></td>
+                                <td><div>KodeTransaksi02</div></td>
+                                <td><div>Mahdi</div></td>
+                                <td><div>Mahdijembutuyy@gmail.com</div></td>
+                                <td><div>Guru Sumadi</div></td>
+                                <td><div>13 November 2022</div></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Literally Kategori -->
+            <div id="category" class="category-title">
+                <h1>Kategori</h1>
+                <small>Atur kategori yang telah dibuat.</small>
+            </div>
+            <div class="info-grid">
+                <div class="wrapper-left">
+                    <div class="card">
+                        <div class="card-info">
+                            <div class="card-head">
+                                <span>Total Kategori</span>
+                                <small>Banyaknya kategori</small>
+                            </div>
+
+                            <h2>3 Kategori</h2>
+                        </div>
+                        <span class="las la-folder"></span>
+                    </div>
+
+                    <div class="needed-card" style="margin-top: 1rem; height: fit-content; box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2)">
+                        <h3>Ingin menambahkan kategori?</h3>
+                        <small>Isi formulir yang telah tersedia</small>
+
+                        <form class="form-class" style="margin-top: 1rem;" id="cform">
+                            <div class="input-flex">
+                                <label for="cname">Nama Kategori</label>
+                                <input type="text" id="cname" name="cname">
+                            </div>
+
+                            <button class="btn-main" style="margin-top: 1rem; width: 100%; justify-content: center;" type="submit" form="cform">
+                                <span class="las la-plus-square"></span>
+                                Tambah
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="chart-container">
+                    <div>
+                        <h3>Statistik Kategori</h3>
+                        <small>Memonitor kategori menggunakan grafik lingkaran</small>
+
+                        <div class="chart-info">
+                            <div class="chart-single">
+                                <span>Total Kelas</span>
+                                <small>Banyaknya kelas di semua kategori</small>
+
+                                <h2>183 Kelas</h2>
+                            </div>
+
+                            <div class="chart-single">
+                                <span>Rata-rata Kelas</span>
+                                <small>Rata-rata kelas per kategori</small>
+
+                                <h2>30 Kelas</h2>
+                            </div>
+
+                            <div class="chart-single">
+                                <span>Modus</span>
+                                <small>Kategori dengan kelas terbanyak</small>
+
+                                <h2>Kategori 1: 52 Kelas</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <canvas id="categoryChart"></canvas>
+                </div>
+            </div>
+
+            <div class="list" style="margin-top: 1rem;">
+                <center><h3>List Kategori <small>Lihat semua kategori <span class="las la-arrow-right"></span></small></h3></center>
+                <table width="100%">
+                    <tbody>
+                        <tr>
+                            <td><div><span class="las la-folder"></span></div></td>
+                            <td><div>Kategori 1</div></td>
+                            <td><div>11 November 2022</div></td>
+                            <td><div>12 Kelas</div></td>
+                            <td>
+                                <div>
+                                    <button class="btn-main" style="height: 2.1rem;">
+                                        <span class="las la-edit"></span>
+                                        Edit
+                                    </button>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <button class="btn-main danger" style="background: tomato; color: white; height: 2.1rem;">
+                                        <span class="las la-trash-alt"></span>
+                                        Hapus
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><div><span class="las la-folder"></span></div></td>
+                            <td><div>Kategori 2</div></td>
+                            <td><div>13 November 2022</div></td>
+                            <td><div>23 Kelas</div></td>
+                            <td>
+                                <div>
+                                    <button class="btn-main" style="height: 2.1rem;">
+                                        <span class="las la-edit"></span>
+                                        Edit
+                                    </button>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <button class="btn-main danger" style="background: tomato; color: white; height: 2.1rem;">
+                                        <span class="las la-trash-alt"></span>
+                                        Hapus
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Kelas -->
+            <div id="class" class="category-title">
+                <h1>Kelas</h1>
+                <small>Atur Kelas yang telah dibuat.</small>
+            </div>
+            <div class="info-grid">
+                <div class="wrapper-left">
+                    <div class="card">
+                        <div class="card-info">
+                            <div class="card-head">
+                                <span>Total Kelas</span>
+                                <small>Banyaknya Kelas</small>
+                            </div>
+
+                            <h2>183 Kelas</h2>
+                        </div>
+                        <span class="las la-school"></span>
+                    </div>
+
+                    <div class="needed-card" style="margin-top: 1rem; height: fit-content; box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2)">
+                        <h3>Ingin menambahkan Kelas?</h3>
+                        <small>Isi formulir yang telah tersedia sesuai dengan pertanyaan</small>
+
+                        <form class="form-class" style="margin-top: 1rem;" id="cform">
+                            <div class="input-flex">
+                                <label for="clname">Nama Kelas</label>
+                                <input type="text" id="clname" name="clname">
+                            </div>
+
+                            <div class="input-flex">
+                                <label for="clpict">Gambar Kelas</label>
+                                <input type="file" id="clpict" name="clpict">
+                            </div>
+
+                            <div class="input-flex">
+                                <label for="clcategory">Kategori</label>
+                                <select>
+                                    <option selected>Pilih Kategori</option>
+                                    <option value="1">Kategori 1</option>
+                                    <option value="2">Kategori 2</option>
+                                    <option value="3">Kategori 3</option>
+                                </select>
+                            </div>
+
+                            <div class="input-flex">
+                                <label for="cllink">Link youtube</label>
+                                <input type="text" id="cllink" name="cllink">
+                            </div>
+
+                            <button class="btn-main" style="margin-top: 1rem; width: 100%; justify-content: center;" type="submit" form="cform">
+                                <span class="las la-plus-square"></span>
+                                Tambah
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="chart-container">
+                    <div>
+                        <h3>Statistik Kelas</h3>
+                        <small>Memonitor kelas menggunakan grafik lingkaran</small>
+
+                        <div class="chart-info">
+                            <div class="chart-single">
+                                <span>Total Pengunjung</span>
+                                <small>Banyaknya pengunjung</small>
+
+                                <h2>183 Orang</h2>
+                            </div>
+
+                            <div class="chart-single">
+                                <span>Rata-rata Pengunjung</span>
+                                <small>Rata-rata pengunjung per Kelas</small>
+
+                                <h2>30 Orang</h2>
+                            </div>
+
+                            <div class="chart-single">
+                                <span>Modus</span>
+                                <small>Kelas dengan pengunjung terbanyak</small>
+
+                                <h2>Kelas 1: 52 Orang</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <canvas id="classChart"></canvas>
+                </div>
+            </div>
+
+            <div class="list" style="margin-top: 1rem;">
+                <center><h3>List Kelas <small>Lihat semua kategori <span class="las la-arrow-right"></span></small></h3></center>
+                <table width="100%">
+                    <tbody>
+                        <tr>
+                            <td><div><span class="las la-school"></span></div></td>
+                            <td><div>Kelas 1</div></td>
+                            <td><div>Kategori 1</div></td>
+                            <td><div style="text-decoration: underline; cursor: pointer">Youtube Link</div></td>
+                            <td><div>52 Pengunjung</div></td>
+                            <td>
+                                <div>
+                                    <button class="btn-main" style="height: 2.1rem;">
+                                        <span class="las la-edit"></span>
+                                        Edit
+                                    </button>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <button class="btn-main danger" style="background: tomato; color: white; height: 2.1rem;">
+                                        <span class="las la-trash-alt"></span>
+                                        Hapus
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><div><span class="las la-school"></span></div></td>
+                            <td><div>Kelas 2</div></td>
+                            <td><div>Kategori 1</div></td>
+                            <td><div style="text-decoration: underline; cursor: pointer">Youtube Link</div></td>
+                            <td><div>123 Pengunjung</div></td>
+                            <td>
+                                <div>
+                                    <button class="btn-main" style="height: 2.1rem;">
+                                        <span class="las la-edit"></span>
+                                        Edit
+                                    </button>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <button class="btn-main danger" style="background: tomato; color: white; height: 2.1rem;">
+                                        <span class="las la-trash-alt"></span>
+                                        Hapus
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const incomeChart= document.getElementById('incomeChart');
+        new Chart(incomeChart, {
+            type: 'line',
+            data: {
+                labels: ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni'],
+                datasets: [{
+                label: 'Pendapatan perbulan dalam juta',
+                data: [12, 19, 3, 5, 2, 3],
+                borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        const categoryChart = document.getElementById('categoryChart');
+        new Chart(categoryChart, {
+            type: 'pie',
+            data: {
+                labels: ['Kategori 1', 'Kategori 2', 'Kategori 3'],
+                datasets: [{
+                    label: 'Banyaknya kelas',
+                    data: [12, 19, 3],
+                    borderWidth: 1
+                }]
+            }
+        });
+
+        const classChart = document.getElementById('classChart');
+        new Chart(classChart, {
+            type: 'pie',
+            data: {
+                labels: ['Kelas 1', 'Kelas 2', 'Kelas 3'],
+                datasets: [{
+                    label: 'Banyaknya Pengunjung',
+                    data: [12, 19, 3],
+                    borderWidth: 1
+                }]
+            }
+        });
+    </script>
+</body>
+</html>

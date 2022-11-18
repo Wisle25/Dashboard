@@ -1,0 +1,441 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&display=swap');
+
+:root {
+    --color-main: #0e3c2f;
+    --color-second: #fab716;
+    --color-third: #fbbc5a;
+    --color-fth: #fee164;
+    --color-fvt: #d8ccc4;
+    --color-sx: #f4f0e5;
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+#sidebar-toggle {
+    display: none;
+}
+
+#sidebar-toggle:checked ~ .sidebar {
+    left: -100%;
+}
+
+#sidebar-toggle:checked ~ .main-content header {
+    left: 0;
+    width: 100%;
+    right: 0;
+}
+
+#sidebar-toggle:checked ~ .main-content {
+    margin-left: 0;
+}
+
+.sidebar {
+    width: 280px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    padding: 1rem 1.5rem;
+    background: var(--color-third);
+    color: var(--color-sx);
+    z-index: 1;
+    transition: left 300ms;
+}
+
+.sidebar-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: .5rem;
+}
+
+.sidebar-head span {
+    font-size: 1.6rem;
+}
+
+.sidebar-menu {
+    margin-top: 3rem;
+}
+
+.menu-head {
+    text-transform: uppercase;
+    color: var(--color-sx);
+    font-size: 1.2rem;
+    font-weight: 800;
+    margin-top: 1.4rem;
+}
+
+.sidebar-menu li {
+    margin-bottom: .3rem;
+}
+
+.sidebar-menu li:hover {
+    background: var(--color-second);
+}
+
+.sidebar-menu li a {
+    color: var(--color-sx);
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-menu li a span {
+    font-size: 1.5rem;
+    display: inline-block;
+    margin-right: .7rem;
+}
+
+.class-category {
+    margin-left: 3.7rem;
+    text-decoration: underline;
+}
+
+.btn-main {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+
+    background: var(--color-fth);
+    border: none;
+    outline: none;
+
+    border-radius: 5px;
+    cursor: pointer;
+
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-main);
+}
+
+.btn-main span {
+    font-size: 1.8rem;
+    display: inline-block;
+    margin-right: .2rem;
+}
+
+.btn-main:hover {
+    background: var(--color-second);
+}
+
+.sidebar-btn {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    left: 5%;
+    right: 5%;
+    bottom: 2.4%;
+}
+
+header {
+    position: fixed;
+    left: 280px;
+    width: calc(100% - 280px);
+    top: 0;
+    z-index: 1;
+
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--color-second);
+    color: var(--color-sx);
+    padding: 1rem;
+    padding-right: 3rem;
+
+    transition: left 300ms;
+}
+
+header a {
+    cursor: pointer;
+}
+
+.side-toggle label {
+    height: 60px;
+    width: 60px;
+    display: grid;
+    place-items: center;
+    font-size: 1.5rem;
+    border-radius: 70%;
+    cursor: pointer;
+}
+
+.side-toggle label:hover {
+    background: var(--color-third);
+}
+
+.main-content {
+    margin-left: 280px;
+    transition: margin-left 300ms;
+}
+
+main {
+    padding: 2rem;
+    background: #f1f5f9;
+    min-height: calc(100vh - 80px);
+    margin-top: 25px;
+}
+
+.category-title {
+    margin-top: 2rem;
+}
+
+.category {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    margin-top: 1.2rem;
+}
+
+.card {
+    display: grid;
+    grid-template-columns: 60% auto;
+    align-items: center;
+    background: #fff;
+    height: fit-content;
+    padding: 1rem;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+}
+
+.card > span {
+    font-size: 6rem;
+}
+
+.card-head span {
+    display: block;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.card-head small {
+    font-weight: 400;
+    font-size: 0.9rem;
+}
+
+.card-info h2 {
+    font-size: 2.1rem;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: auto 58.6%;
+    grid-gap: 1rem;
+    margin-top: .8rem;
+}
+
+.needed-card {
+    display: flex;
+    flex-direction: column;
+    height: 21.7rem;
+    background: #fff;
+    padding: 1rem;
+    border-radius: 3px;
+
+    overflow: auto;
+}
+
+.needed-card table {
+    border-collapse: collapse;
+    margin-top: .2rem;
+    color: var(--color-main);
+    overflow-x: auto;
+}
+
+.needed-card table td div {
+    background: #f1f5f9;
+    margin-bottom: .2rem;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding: .5rem;
+    padding-top: 1.3rem;
+    padding-bottom: 1.3rem;
+    font-size: .87rem;
+    font-weight: 400;
+}
+
+.btn-second {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    height: 2rem;
+
+    background: var(--color-fth);
+    border: none;
+    outline: none;
+
+    border-radius: 5px;
+    cursor: pointer;
+
+    font-size: 1rem;
+    font-weight: 600;
+    color: #019267;
+}
+
+.btn-second span {
+    font-size: 1.8rem;
+    display: inline-block;
+    margin-right: .2rem;
+}
+
+.btn-second:hover {
+    background: var(--color-second);
+}
+
+.danger {
+    background: tomato;
+}
+
+.list h3 small {
+    color: var(--color-second);
+    font-weight: 600;
+    font-size: .9rem;
+    display: inline-block;
+    margin-left: 1rem;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.list {
+    overflow: auto;
+}
+
+.list table {
+    border-collapse: collapse;
+    margin-top: .2rem;
+}
+
+.list table td div span {
+    font-size: 2rem;
+}
+
+.list table td div {
+    background-color: #fff;
+    margin-bottom: .2rem;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 1.2rem;
+    font-size: .87rem;
+    font-weight: 400;
+}
+
+.chart-container {
+    background: #fff;
+    padding: 1rem;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    height: 23.3rem;
+}
+
+.form-class {
+    border: 2px solid var(--color-main);
+    border-radius: 3px;
+    padding: .8rem;
+}
+
+.input-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: .6rem;
+}
+
+input[type="text"] {
+    width: 60%;
+    padding: .3rem .4rem;
+    border: 2px solid var(--color-main);
+    border-radius: 3px;
+    outline: none;
+    transition: 0.5s;
+}
+
+input[type="text"]:focus {
+    background: whitesmoke;
+    border: 2px solid var(--color-second);
+}
+
+.chart-single {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+select {
+    width: 60%;
+    padding: .3rem .4rem;
+    border: 2px solid var(--color-main);
+    border-radius: 3px;
+    outline: none;
+    transition: 0.5s;
+}
+
+select:focus {
+    background: whitesmoke;
+    border: 2px solid var(--color-second);
+}
+
+@media only screen and (max-width: 1620px) {
+    .category {
+        grid-template-columns: 100%;
+    }
+}
+
+@media only screen and (max-width: 1519px) {
+    .sidebar {
+        left: -100%;
+        z-index: 1;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    header {
+        left: 0;
+        width: 100%;
+    }
+
+    #sidebar-toggle:checked ~ .sidebar {
+        left: 0;
+    }
+}
+
+@media only screen and (max-width: 1280px) {
+    .info-grid {
+        grid-template-columns: 100%;
+    }
+}
+
+@media only screen and (max-width: 912px) {
+    .category {
+        grid-template-columns: 100%;
+    }
+
+    .chart-container {
+        flex-direction: column;
+        height: fit-content;
+    }
+}
+
+@media only screen and (max-width: 789px) {
+    .needed-card table td div {
+        width: 165px;
+    }
+
+    .list table td div {
+        width: 170px;
+    }
+}
