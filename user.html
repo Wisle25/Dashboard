@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <title>User Panel</title>
+</head>
+<body>
+    <input type="checkbox" name="toggle-sidebar" id="sidebar-toggle" >
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-head">
+            <span>User Panel</span>
+        </div>
+
+        <div class="sidebar-main">
+            <!-- Dashboard -->
+            <div class="sidebar-menu">
+                <div class="menu-head">
+                    <span>Dashboard</span>
+                </div>
+                <ul>
+                    <li>
+                        <a href="#overview">
+                            <span class="las la-star"></span>
+                            Overview
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <span class="las la-money-bill"></span>
+                            Riwayat
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <span class="las la-user-tie"></span>
+                            Guru
+                        </a>
+                    </li>
+                </ul>
+                <div class="menu-head">
+                    <span>Aplikasi</span>
+                </div>
+                <ul>
+                    <li>
+                        <a href="">
+                            <span class="las la-home"></span>
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <span class="las la-phone"></span>
+                            Contact
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <span class="las la-users"></span>
+                            Pengguna
+                        </a>
+                    </li>
+                </ul>
+                <div class="sidebar-btn">
+                    <button class="btn-main">
+                        <span class="las la-arrow-circle-left"></span>
+                        Back
+                    </button>
+                    <button class="btn-main">
+                        <span class="las la-door-open"></span>
+                        Sign out
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Main Content -->
+    <div class="main-content">
+        <header>
+            <div class="side-toggle">
+                <label for="sidebar-toggle">
+                    <span class="las la-bars"></span>
+                </label>
+            </div>
+
+            <a href=""><img src="resources/logo-cropped.png" width="70px" /></a>
+        </header>
+
+        <main>
+            <!-- Kelas -->
+            <div id="overview" class="category-title">
+                <h1>Overview</h1>
+                <small>Memonitor kemajuanmu dalam mengakses Kelas. Cek masa aktif akses kelas, biaya, dan sebagainya</small>
+            </div>
+            <div class="category">
+                <div class="card-sc" style="height: 11rem;">
+                    <div class="card-info">
+                        <div class="card-head">
+                            <span>Masa Aktif</span>
+                            <small>Sisa durasi masa aktif untuk mengakses kelas</small>
+                        </div>
+
+                        <div class="progress">
+                            <div class="progress-value" style="width: 50%;"></div>
+                        </div>
+                        <small>Tersisa 15 hari.</small>
+                    </div>
+                    <span class="las la-stopwatch"></span>
+                </div>
+
+                <div class="card-sc">
+                    <div class="card-info">
+                        <div class="card-head">
+                            <span>Isi Masa Aktif</span>
+                            <small>Ingin menambah durasi masa aktif? Top-up untuk mengakses kelas dengan klik tombol</small> <!-- 5 itu dynamic -->
+                        </div>
+                    </div>
+                    <span class="las la-credit-card"></span>
+                    <button class="btn-main" style="width: fit-content;">
+                        <span class="las la-dollar-sign"></span>
+                        Isi Masa Aktif
+                    </button>
+                </div>
+
+                <div class="card-sc">
+                    <div class="card-info">
+                        <div class="card-head">
+                            <span>Guru</span>
+                            <small>Mempunyai ilmu yang ingin disebarkan? Klik tombol untuk mendaftar menjadi guru</small> <!-- 5 itu dynamic -->
+                        </div>
+                    </div>
+                    <span class="las la-user-tie"></span>
+                    <button class="btn-main" style="width: fit-content;">
+                        <span class="lab la-wpforms"></span>
+                        Mendaftar
+                    </button>
+                </div>
+            </div>
+
+            <div id="history" class="category-title">
+                <h1>Riwayat</h1>
+                <small>Semua kegiatan akan direkam di riwayat. Pastikan semuanya benar sesuai kegiatan</small>
+            </div>
+            <div class="info-grid">
+                <div>
+                    <div class="list" style="margin-top: 1rem;">
+                        <h3>Pembelian Kelas <small>Lihat semua riwayat <span class="las la-arrow-right"></span></small></h3>
+                        <table width="100%">
+                            <tbody>
+                                <tr>
+                                    <td><div><span class="las la-receipt"></span></div></td>
+                                    <td><div>KodeTransaksi01</div></td>
+                                    <td><div>Budi</div></td>
+                                    <td><div>213801293</div></td>
+                                    <td><div>11 November 2022</div></td>
+                                </tr>
+                                <tr>
+                                    <td><div><span class="las la-receipt"></span></div></td>
+                                    <td><div>KodeTransaksi02</div></td>
+                                    <td><div>Budi</div></td>
+                                    <td><div>213801293</div></td>
+                                    <td><div>11 November 2022</div></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="list" style="margin-top: 1rem;">
+                        <h3>Pendampingan Guru <small>Lihat semua riwayat <span class="las la-arrow-right"></span></small></h3>
+                        <table width="100%">
+                            <tbody>
+                                <tr>
+                                    <td><div><span class="las la-receipt"></span></div></td>
+                                    <td><div>KodeTransaksi01</div></td>
+                                    <td><div>Mahdi</div></td>
+                                    <td><div>Mahdijembutuyy@gmail.com</div></td>
+                                    <td><div>Guru Sumadi</div></td>
+                                    <td><div>13 November 2022</div></td>
+                                </tr>
+                                <tr>
+                                    <td><div><span class="las la-receipt"></span></div></td>
+                                    <td><div>KodeTransaksi02</div></td>
+                                    <td><div>Mahdi</div></td>
+                                    <td><div>Mahdijembutuyy@gmail.com</div></td>
+                                    <td><div>Guru Sumadi</div></td>
+                                    <td><div>14 November 2022</div></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div id="teacher" class="category-title">
+                <h1>Guru</h1>
+                <small>Dashboard khusus untuk guru. Cek pendapatan, harga, dan riwayat pengajaran</small>
+            </div>
+            <div class="info-grid">
+                <div class="payment-left">
+                    <div class="card">
+                        <div class="card-info">
+                            <div class="card-head">
+                                <span>Total Pendapatan</span>
+                                <small>Pendapatan yang didapatkan di bulan ini</small>
+                            </div>
+
+                            <h2>Rp10.000.000</h2>
+                        </div>
+                        <span class="las la-wallet"></span>
+                        <small>5% peningkatan dari bulan terakhir</small>
+                    </div>
+
+                    <div class="card" style="margin-top: 1.1rem;">
+                        <div class="card-info">
+                            <div class="card-head">
+                                <span>Biaya Pendampingan</span>
+                                <small>Biaya yang ditetapkan per pendampingan</small>
+                            </div>
+
+                            <h2>Rp500.000</h2>
+                        </div>
+                        <span class="las la-money-bill"></span>
+                        <div>
+                            <small>Ingin menetapkan harga yang baru? Klik tombol</small>
+                            <button class="btn-main">
+                                <span class="las la-edit"></span>
+                                Tetapkan Harga Baru
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="chart-container" style="height: 23.6rem;">
+                    <canvas id="incomeChart"></canvas>
+                </div>
+            </div>
+
+            <div class="list" style="margin-top: 1rem;">
+                <center><h3>Riwayat pendampingan <small>Lihat semua riwayat <span class="las la-arrow-right"></span></small></h3></center>
+                <table width="100%">
+                    <tbody>
+                        <tr>
+                            <td><div><span class="las la-receipt"></span></div></td>
+                            <td><div>KodeTransaksi01</div></td>
+                            <td><div>Guru Sumadi</div></td>
+                            <td><div>Budisantosa@gmail.com</div></td>
+                            <td><div>Budi</div></td>
+                            <td><div>13 November 2022</div></td>
+                        </tr>
+                        <tr>
+                            <td><div><span class="las la-receipt"></span></div></td>
+                            <td><div>KodeTransaksi02</div></td>
+                            <td><div>Guru Sumadi</div></td>
+                            <td><div>Jokosusilo@gmail.com</div></td>
+                            <td><div>Joko</div></td>
+                            <td><div>14 November 2022</div></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const incomeChart= document.getElementById('incomeChart');
+        new Chart(incomeChart, {
+            type: 'line',
+            data: {
+                labels: ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni'],
+                datasets: [{
+                label: 'Pendapatan perbulan dalam juta',
+                data: [12, 19, 3, 5, 2, 3],
+                borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        const categoryChart = document.getElementById('categoryChart');
+        new Chart(categoryChart, {
+            type: 'pie',
+            data: {
+                labels: ['Kategori 1', 'Kategori 2', 'Kategori 3'],
+                datasets: [{
+                    label: 'Banyaknya kelas',
+                    data: [12, 19, 3],
+                    borderWidth: 1
+                }]
+            }
+        });
+
+        const classChart = document.getElementById('classChart');
+        new Chart(classChart, {
+            type: 'pie',
+            data: {
+                labels: ['Kelas 1', 'Kelas 2', 'Kelas 3'],
+                datasets: [{
+                    label: 'Banyaknya Pengunjung',
+                    data: [12, 19, 3],
+                    borderWidth: 1
+                }]
+            }
+        });
+    </script>
+</body>
+</html>
